@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panda Express India - Where East Meets West in Perfect Harmony</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .panda-gradient {
+            background: linear-gradient(135deg, #ff0000 0%, #cc0000 50%, #990000 100%);
+        }
+
+        .bamboo-pattern {
+            background-image: 
+                repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 20px),
+                repeating-linear-gradient(180deg, transparent, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 20px);
+        }
+
+        .floating-panda {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .bounce-panda {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+
+        .glow-text {
+            text-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+        }
+
+        .neon-border {
+            border: 2px solid #ff0000;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+        }
+
+        .spinning-wheel {
+            animation: spin 10s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .pulse-animation {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 1s ease-out;
+        }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .slide-in-right {
+            animation: slideInRight 1s ease-out;
+        }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .wok-steam {
+            animation: steam 3s ease-in-out infinite;
+        }
+
+        @keyframes steam {
+            0%, 100% { transform: translateY(0) scale(1); opacity: 0.7; }
+            50% { transform: translateY(-30px) scale(1.1); opacity: 0.3; }
+        }
+
+        .product-hover {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .product-hover:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(255, 0, 0, 0.3);
+        }
+
+        .mood-indicator {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ffff00 30%, #ff0000 70%);
+            position: relative;
+            animation: moodPulse 2s infinite;
+        }
+
+        @keyframes moodPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .mood-indicator::before {
+            content: '🐼';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+        }
+
+        .interactive-screen {
+            background: linear-gradient(45deg, #000, #333);
+            border: 3px solid #ff0000;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .spin-wheel {
+            width: 300px;
+            height: 300px;
+            border: 10px solid #ff0000;
+            border-radius: 50%;
+            position: relative;
+            background: conic-gradient(
+                #ff0000 0deg 60deg,
+                #ffff00 60deg 120deg,
+                #00ff00 120deg 180deg,
+                #00ffff 180deg 240deg,
+                #0000ff 240deg 300deg,
+                #ff00ff 300deg 360deg
+            );
+            cursor: pointer;
+            transition: transform 0.5s ease-out;
+        }
+
+        .feedback-star {
+            color: #ffd700;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .feedback-star:hover {
+            transform: scale(1.3);
+            text-shadow: 0 0 10px #ffd700;
+        }
+
+        .panda-mascot {
+            font-size: 100px;
+            animation: mascotDance 4s infinite;
+        }
+
+        @keyframes mascotDance {
+            0%, 100% { transform: rotate(-5deg); }
+            25% { transform: rotate(5deg); }
+            50% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+        }
+
+        .queue-indicator {
+            background: linear-gradient(45deg, #ff0000, #ffff00);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            text-align: center;
+            animation: queueBlink 2s infinite;
+        }
+
+        @keyframes queueBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .typing-effect {
+            overflow: hidden;
+            border-right: 2px solid #ff0000;
+            white-space: nowrap;
+            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #ff0000; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-black bg-opacity-90 backdrop-filter backdrop-blur-lg">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+                <div class="panda-mascot">🐼</div>
+                <div class="text-2xl font-bold glow-text">Panda Express India</div>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-red-500 transition-colors">Home</a>
+                <a href="#menu" class="hover:text-red-500 transition-colors">Menu</a>
+                <a href="#experience" class="hover:text-red-500 transition-colors">Experience</a>
+                <a href="#offers" class="hover:text-red-500 transition-colors">Offers</a>
+                <a href="#locations" class="hover:text-red-500 transition-colors">Locations</a>
+            </div>
+            <div class="mood-indicator"></div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 parallax-bg" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 800%22><path fill=%22%23ff0000%22 d=%22M0,320L48,293.3C96,267,192,213,288,208C384,203,480,245,576,250.7C672,256,768,224,864,197.3C960,171,1056,149,1152,165.3C1248,181,1344,235,1392,261.3L1440,288L1440,800L1392,800C1344,800,1248,800,1152,800C1056,800,960,800,864,800C768,800,672,800,576,800C480,800,384,800,288,800C192,800,96,800,48,800L0,800Z%22/%3E</svg>')"></div>
+        
+        <div class="container mx-auto px-4 text-center z-10">
+            <div class="floating-panda mb-8">
+                <div class="text-8xl mb-4">🐼</div>
+            </div>
+            <h1 class="text-6xl font-bold mb-6 glow-text typing-effect">
+                Where East Meets West in Perfect Harmony
+            </h1>
+            <p class="text-xl mb-8 max-w-2xl mx-auto fade-in-up">
+                Experience the authentic flavors of China with an Indian twist. 
+                Fresh ingredients, traditional recipes, and love in every bite.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="panda-gradient px-8 py-4 rounded-full text-white font-bold text-lg hover:scale-105 transition-transform neon-border">
+                    <i class="fas fa-utensils mr-2"></i>
+                    Order Now
+                </button>
+                <button class="glass-effect px-8 py-4 rounded-full text-white font-bold text-lg hover:scale-105 transition-transform">
+                    <i class="fas fa-play mr-2"></i>
+                    Watch Our Story
+                </button>
+            </div>
+        </div>
+
+        <!-- Floating Pandas -->
+        <div class="absolute top-20 left-10 text-4xl floating-panda">🐼</div>
+        <div class="absolute bottom-20 right-10 text-3xl bounce-panda">🐼</div>
+        <div class="absolute top-1/2 left-5 text-2xl floating-panda">🎋</div>
+        <div class="absolute bottom-1/3 right-5 text-2xl bounce-panda">🎋</div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20 bg-gradient-to-b from-black to-red-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold mb-6 glow-text">
+                    🐼 Our Signature Indianized Flavors 🐼
+                </h2>
+                <p class="text-xl max-w-3xl mx-auto">
+                    Discover our specially crafted menu that brings together the best of Chinese culinary traditions with beloved Indian flavors
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="product-hover neon-border rounded-2xl p-6 text-center">
+                    <div class="bg-red-600 rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-3xl">🍜</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Schezwan Biryani</h3>
+                    <p class="text-gray-300 mb-4">Spicy Schezwan flavors meet aromatic basmati rice</p>
+                    <div class="text-2xl font-bold text-red-400 mb-4">₹199</div>
+                    <button class="panda-gradient w-full py-2 rounded-full font-bold hover:scale-105 transition-transform">
+                        Add to Cart 🛒
+                    </button>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-hover neon-border rounded-2xl p-6 text-center">
+                    <div class="bg-red-600 rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-3xl">🍗</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Desi-Fusion Butter Chicken</h3>
+                    <p class="text-gray-300 mb-4">Creamy butter chicken with Chinese wok flavors</p>
+                    <div class="text-2xl font-bold text-red-400 mb-4">₹299</div>
+                    <button class="panda-gradient w-full py-2 rounded-full font-bold hover:scale-105 transition-transform">
+                        Add to Cart 🛒
+                    </button>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-hover neon-border rounded-2xl p-6 text-center">
+                    <div class="bg-red-600 rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-3xl">🍛</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Paneer Manchurian</h3>
+                    <p class="text-gray-300 mb-4">Indo-Chinese favorite with fresh paneer</p>
+                    <div class="text-2xl font-bold text-red-400 mb-4">₹399</div>
+                    <button class="panda-gradient w-full py-2 rounded-full font-bold hover:scale-105 transition-transform">
+                        Add to Cart 🛒
+                    </button>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-hover neon-border rounded-2xl p-6 text-center">
+                    <div class="bg-red-600 rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                        <span class="text-3xl">🍜</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Masala Hakka Noodles</h3>
+                    <p class="text-gray-300 mb-4">Traditional hakka noodles with Indian masala</p>
+                    <div class="text-2xl font-bold text-red-400 mb-4">₹249</div>
+                    <button class="panda-gradient w-full py-2 rounded-full font-bold hover:scale-105 transition-transform">
+                        Add to Cart 🛒
+                    </button>
+                </div>
+            </div>
+
+            <!-- Special Festival Offerings -->
+            <div class="mt-16 text-center">
+                <h3 class="text-3xl font-bold mb-8 glow-text">🎉 Festival Special Packaging 🎉</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="glass-effect rounded-2xl p-6 hover:scale-105 transition-transform">
+                        <div class="text-6xl mb-4">🪔</div>
+                        <h4 class="text-xl font-bold mb-2">Diwali Special</h4>
+                        <p class="text-gray-300">Celebrate the festival of lights with our specially curated meals</p>
+                    </div>
+                    <div class="glass-effect rounded-2xl p-6 hover:scale-105 transition-transform">
+                        <div class="text-6xl mb-4">🌈</div>
+                        <h4 class="text-xl font-bold mb-2">Holi Special</h4>
+                        <p class="text-gray-300">Colorful packaging for the festival of colors</p>
+                    </div>
+                    <div class="glass-effect rounded-2xl p-6 hover:scale-105 transition-transform">
+                        <div class="text-6xl mb-4">🌙</div>
+                        <h4 class="text-xl font-bold mb-2">Karva Chauth</h4>
+                        <p class="text-gray-300">Special packaging for the special day</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gradient-to-b from-red-900 to-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold mb-6 glow-text">
+                    🏪 The Ultimate Dining Experience 🏪
+                </h2>
+                <p class="text-xl max-w-3xl mx-auto">
+                    Step into our world where technology meets tradition, and every meal is an adventure
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Live Wok Station -->
+                <div class="slide-in-left">
+                    <div class="neon-border rounded-2xl p-8 bg-gradient-to-br from-red-600 to-red-800">
+                        <h3 class="text-3xl font-bold mb-6 text-center">🔥 Live Wok Station 🔥</h3>
+                        <div class="text-center mb-6">
+                            <div class="text-6xl mb-4">🍳</div>
+                            <div class="wok-steam text-4xl">💨</div>
+                        </div>
+                        <p class="text-lg mb-6 text-center">
+                            Watch our expert chefs create your favorite dishes right before your eyes! 
+                            Fresh ingredients, sizzling woks, and authentic techniques.
+                        </p>
+                        <div class="queue-indicator">
+                            <i class="fas fa-users mr-2"></i>
+                            Separate Queue for Custom Orders
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Digital Ordering -->
+                <div class="slide-in-right">
+                    <div class="interactive-screen">
+                        <h3 class="text-3xl font-bold mb-6 text-center">📱 Smart Ordering System 📱</h3>
+                        <div class="text-center mb-6">
+                            <div class="text-6xl mb-4">🖥️</div>
+                            <div class="pulse-animation text-red-400">
+                                <i class="fas fa-wifi text-2xl"></i>
+                            </div>
+                        </div>
+                        <p class="text-lg mb-6 text-center">
+                            Skip the wait with our digital ordering screens. 
+                            Browse menu, customize orders, and pay seamlessly.
+                        </p>
+                        <div class="bg-green-600 text-white px-4 py-2 rounded-full text-center font-bold">
+                            <i class="fas fa-check mr-2"></i>
+                            No Queue Required!
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transparency & Hygiene -->
+            <div class="mt-16">
+                <div class="glass-effect rounded-2xl p-8 text-center">
+                    <h3 class="text-3xl font-bold mb-6 glow-text">🔍 Complete Transparency 🔍</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="fade-in-up">
+                            <div class="text-5xl mb-4">🧼</div>
+                            <h4 class="text-xl font-bold mb-2">Hygiene First</h4>
+                            <p class="text-gray-300">See-through glass cooking stations for complete transparency</p>
+                        </div>
+                        <div class="fade-in-up">
+                            <div class="text-5xl mb-4">👨‍🍳</div>
+                            <h4 class="text-xl font-bold mb-2">Master Chefs</h4>
+                            <p class="text-gray-300">Watch skilled chefs prepare your meal with precision</p>
+                        </div>
+                        <div class="fade-in-up">
+                            <div class="text-5xl mb-4">⏱️</div>
+                            <h4 class="text-xl font-bold mb-2">Real-time Updates</h4>
+                            <p class="text-gray-300">Track your order progress from preparation to serving</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offers Section -->
+    <section id="offers" class="py-20 bg-gradient-to-b from-black to-red-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold mb-6 glow-text">
+                    🎁 Exclusive Offers & Rewards 🎁
+                </h2>
+                <p class="text-xl max-w-3xl mx-auto">
+                    Spin the wheel, collect panda keychains, and enjoy amazing rewards!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Spin the Wheel -->
+                <div class="text-center">
+                    <h3 class="text-3xl font-bold mb-6">🎰 Spin & Win 🎰</h3>
+                    <div class="flex justify-center mb-6">
+                        <div class="spin-wheel" id="spinWheel">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="text-4xl">🐼</div>
+                            </div>
+                            <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-3">
+                                <div class="w-0 h-0 border-l-4 border-r-4 border-b-8 border-l-transparent border-r-transparent border-b-white"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="panda-gradient px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform" onclick="spinWheel()">
+                        SPIN NOW! 🎲
+                    </button>
+                    <p class="text-gray-300 mt-4">Win discounts up to 50% off your order!</p>
+                </div>
+
+                <!-- Collectibles -->
+                <div class="text-center">
+                    <h3 class="text-3xl font-bold mb-6">🧸 Panda Collectibles 🧸</h3>
+                    <div class="grid grid-cols-2 gap-6 mb-6">
+                        <div class="glass-effect rounded-2xl p-6 hover:scale-105 transition-transform">
+                            <div class="text-4xl mb-2">🐼</div>
+                            <h4 class="font-bold">Panda Keychain</h4>
+                            <p class="text-sm text-gray-300">Free with orders above ₹500</p>
+                        </div>
+                        <div class="glass-effect rounded-2xl p-6 hover:scale-105 transition-transform">
+                            <div class="text-4xl mb-2">🧸</div>
+                            <h4 class="font-bold">Panda Soft Toy</h4>
+                            <p class="text-sm text-gray-300">Free with orders above ₹1000</p>
+                        </div>
+                    </div>
+                    <button class="glass-effect px-6 py-3 rounded-full font-bold hover:scale-105 transition-transform">
+                        <i class="fas fa-gift mr-2"></i>
+                        Collect All!
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Tasters -->
+            <div class="mt-16">
+                <div class="neon-border rounded-2xl p-8 bg-gradient-to-br from-red-600 to-red-800">
+                    <h3 class="text-3xl font-bold mb-6 text-center">👅 Product Tasters & Feedback 👅</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="text-xl font-bold mb-4">🆕 Try New Launches</h4>
+                            <p class="text-gray-200 mb-4">
+                                Be the first to taste our latest creations! Free samples of new menu items every week.
+                            </p>
+                            <div class="flex space-x-2">
+                                <button class="bg-yellow-500 text-black px-4 py-2 rounded-full font-bold">
+                                    This Week: Tandoori Panda Bowl
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold mb-4">⭐ Real-time Feedback</h4>
+                            <p class="text-gray-200 mb-4">
+                                Rate your experience and help us improve. Your feedback matters!
+                            </p>
+                            <div class="flex space-x-2 justify-center">
+                                <span class="feedback-star">⭐</span>
+                                <span class="feedback-star">⭐</span>
+                                <span class="feedback-star">⭐</span>
+                                <span class="feedback-star">⭐</span>
+                                <span class="feedback-star">⭐</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section id="locations" class="py-20 bg-gradient-to-b from-red-900 to-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold mb-6 glow-text">
+                    📍 Find Your Nearest Panda Express 📍
+                </h2>
+                <p class="text-xl max-w-3xl mx-auto">
+                    We're expanding across India! Find us in major cities and coming soon to your neighborhood.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Map -->
+                <div class="neon-border rounded-2xl p-8 bg-gradient-to-br from-red-600 to-red-800">
+                    <h3 class="text-2xl font-bold mb-6 text-center">🗺️ Our Locations 🗺️</h3>
+                    <div class="relative">
+                        <div class="text-center text-8xl mb-4">🇮🇳</div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="glass-effect rounded-lg p-3 text-center">
+                                <div class="text-2xl mb-2">🏙️</div>
+                                <div class="font-bold">Mumbai</div>
+                                <div class="text-sm text-gray-300">5 locations</div>
+                            </div>
+                            <div class="glass-effect rounded-lg p-3 text-center">
+                                <div class="text-2xl mb-2">🏛️</div>
+                                <div class="font-bold">Delhi</div>
+                                <div class="text-sm text-gray-300">3 locations</div>
+                            </div>
+                            <div class="glass-effect rounded-lg p-3 text-center">
+                                <div class="text-2xl mb-2">🌆</div>
+                                <div class="font-bold">Bangalore</div>
+                                <div class="text-sm text-gray-300">4 locations</div>
+                            </div>
+                            <div class="glass-effect rounded-lg p-3 text-center">
+                                <div class="text-2xl mb-2">🏢</div>
+                                <div class="font-bold">Hyderabad</div>
+                                <div class="text-sm text-gray-300">2 locations</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coming Soon -->
+                <div class="interactive-screen">
+                    <h3 class="text-2xl font-bold mb-6 text-center">🚀 Coming Soon 🚀</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between bg-gradient-to-r from-yellow-500 to-red-500 rounded-lg p-4">
+                            <div>
+                                <div class="font-bold">Pune</div>
+                                <div class="text-sm">Opening Q2 2024</div>
+                            </div>
+                            <div class="text-2xl">🎯</div>
+                        </div>
+                        <div class="flex items-center justify-between bg-gradient-to-r from-green-500 to-blue-500 rounded-lg p-4">
+                            <div>
+                                <div class="font-bold">Chennai</div>
+                                <div class="text-sm">Opening Q3 2024</div>
+                            </div>
+                            <div class="text-2xl">🎯</div>
+                        </div>
+                        <div class="flex items-center justify-between bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg p-4">
+                            <div>
+                                <div class="font-bold">Kolkata</div>
+                                <div class="text-sm">Opening Q4 2024</div>
+                            </div>
+                            <div class="text-2xl">🎯</div>
+                        </div>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <button class="panda-gradient px-6 py-3 rounded-full font-bold hover:scale-105 transition-transform">
+                            <i class="fas fa-bell mr-2"></i>
+                            Notify Me!
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="text-3xl">🐼</div>
+                        <div class="text-xl font-bold">Panda Express India</div>
+                    </div>
+                    <p class="text-gray-400">
+                        Where East meets West in perfect harmony. 
+                        Fresh flavors, authentic taste, delivered with love.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#menu" class="hover:text-red-400">Menu</a></li>
+                        <li><a href="#locations" class="hover:text-red-400">Locations</a></li>
+                        <li><a href="#offers" class="hover:text-red-400">Offers</a></li>
+                        <li><a href="#" class="hover:text-red-400">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-phone mr-2"></i>1800-PANDA-IN</li>
+                        <li><i class="fas fa-envelope mr-2"></i>hello@pandaexpress.in</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>Find Store</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-2xl hover:text-red-400 transition-colors">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-2xl hover:text-red-400 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-2xl hover:text-red-400 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-2xl hover:text-red-400 transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Panda Express India. All rights reserved. Made with ❤️ and 🐼</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button class="panda-gradient w-16 h-16 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center" onclick="orderNow()">
+            <i class="fas fa-shopping-cart text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Chat Bot -->
+    <div class="fixed bottom-6 left-6 z-50">
+        <div class="glass-effect rounded-full p-3 hover:scale-110 transition-transform cursor-pointer" onclick="openChat()">
+            <div class="text-2xl">🐼</div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Spin wheel functionality
+        let isSpinning = false;
+        function spinWheel() {
+            if (isSpinning) return;
+            
+            isSpinning = true;
+            const wheel = document.getElementById('spinWheel');
+            const randomRotation = Math.floor(Math.random() * 360) + 1440; // Multiple rotations
+            
+            wheel.style.transform = `rotate(${randomRotation}deg)`;
+            wheel.style.transition = 'transform 3s ease-out';
+            
+            setTimeout(() => {
+                const prizes = [
+                    { text: "🎉 50% OFF!", color: "bg-yellow-500" },
+                    { text: "🍜 Free Meal!", color: "bg-green-500" },
+                    { text: "🐼 Panda Toy!", color: "bg-blue-500" },
+                    { text: "🎁 20% OFF!", color: "bg-red-500" },
+                    { text: "🥤 Free Drink!", color: "bg-purple-500" },
+                    { text: "🎊 Try Again!", color: "bg-gray-500" }
+                ];
+                
+                const randomPrize = prizes[Math.floor(Math.random() * prizes.length)];
+                showPrizeModal(randomPrize);
+                isSpinning = false;
+            }, 3000);
+        }
+
+        function showPrizeModal(prize) {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+            modal.innerHTML = `
+                <div class="bg-white rounded-2xl p-8 text-center text-black max-w-md mx-4">
+                    <div class="text-6xl mb-4">🎉</div>
+                    <h3 class="text-2xl font-bold mb-4">Congratulations!</h3>
+                    <div class="text-3xl font-bold ${prize.color} text-white rounded-lg p-4 mb-4">
+                        ${prize.text}
+                    </div>
+                    <button onclick="this.parentElement.parentElement.remove()" class="bg-red-500 text-white px-6 py-3 rounded-full font-bold hover:bg-red-600">
+                        Claim Now!
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        // Order now functionality
+        function orderNow() {
+            alert('🐼 Redirecting to our ordering app! Download from App Store or Google Play Store.');
+        }
+
+        // Chat bot functionality
+        function openChat() {
+            alert('🐼 Hi! I\'m Panda Bot. How can I help you today? (Chat feature coming soon!)');
+        }
+
+        // Feedback stars
+        document.querySelectorAll('.feedback-star').forEach((star, index) => {
+            star.addEventListener('click', function() {
+                const rating = index + 1;
+                document.querySelectorAll('.feedback-star').forEach((s, i) => {
+                    s.style.color = i < rating ? '#ffd700' : '#666';
+                });
+                setTimeout(() => {
+                    alert(`🐼 Thank you for your ${rating}-star rating! Your feedback helps us improve.`);
+                }, 300);
+            });
+        });
+
+        // Parallax effect
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.parallax-bg');
+            if (parallax) {
+                const speed = scrolled * 0.5;
+                parallax.style.transform = `translateY(${speed}px)`;
+            }
+        });
+
+        // Add to cart functionality
+        document.querySelectorAll('.product-hover button').forEach(button => {
+            button.addEventListener('click', function() {
+                const product = this.closest('.product-hover');
+                const productName = product.querySelector('h3').textContent;
+                const productPrice = product.querySelector('.text-2xl').textContent;
+                
+                // Add bounce animation
+                this.style.transform = 'scale(0.9)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+                
+                // Show success message
+                showSuccessMessage(`${productName} added to cart! ${productPrice}`);
+            });
+        });
+
+        function showSuccessMessage(message) {
+            const successDiv = document.createElement('div');
+            successDiv.className = 'fixed top-20 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 transform translate-x-full';
+            successDiv.innerHTML = `
+                <div class="flex items-center">
+                    <i class="fas fa-check-circle mr-2"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            document.body.appendChild(successDiv);
+            
+            setTimeout(() => {
+                successDiv.style.transform = 'translateX(0)';
+                successDiv.style.transition = 'transform 0.3s ease-out';
+            }, 100);
+            
+            setTimeout(() => {
+                successDiv.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    successDiv.remove();
+                }, 300);
+            }, 3000);
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Add animation to elements when they come into view
+        document.querySelectorAll('.fade-in-up, .slide-in-left, .slide-in-right').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(50px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Panda mood indicator
+        const moodIndicator = document.querySelector('.mood-indicator');
+        const moods = ['😊', '😋', '🤤', '😍', '🥰'];
+        let currentMood = 0;
+
+        setInterval(() => {
+            currentMood = (currentMood + 1) % moods.length;
+            moodIndicator.innerHTML = moods[currentMood];
+        }, 2000);
+
+        // Loading screen
+        window.addEventListener('load', () => {
+            const loadingScreen = document.createElement('div');
+            loadingScreen.className = 'fixed inset-0 bg-black flex items-center justify-center z-50';
+            loadingScreen.innerHTML = `
+                <div class="text-center">
+                    <div class="text-8xl mb-4 panda-mascot">🐼</div>
+                    <div class="text-2xl font-bold glow-text">Welcome to Panda Express India</div>
+                    <div class="text-lg text-gray-400 mt-2">Loading delicious experiences...</div>
+                </div>
+            `;
+            document.body.appendChild(loadingScreen);
+            
+            setTimeout(() => {
+                loadingScreen.style.opacity = '0';
+                loadingScreen.style.transition = 'opacity 1s ease';
+                setTimeout(() => {
+                    loadingScreen.remove();
+                }, 1000);
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
